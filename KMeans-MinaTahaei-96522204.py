@@ -37,7 +37,7 @@ def compute_means(X, idx, K):
     return centroids
 
 
-def find_k_means(X, K, max_iters=10):
+def find_k_means(X, K, max_iters=2):
     centroids = initialize_K_centroids(X, K)
     previous_centroids = centroids
     for _ in range(max_iters):
@@ -65,11 +65,11 @@ def main():
     print('Image found with width: {}, height: {}, depth: {}'.format(w, h, d))
 
     X = image.reshape((w * h, d))
-    K = 20 # the number of colors in the compressed image
+    K = 2 # the number of colors in the compressed image
 
     # Get colors
     print('Running')
-    colors, _ = find_k_means(X, K, max_iters=10)
+    colors, _ = find_k_means(X, K, max_iters=2)
 
     # Indexes for color for each pixel
     idx = find_closest_centroids(X, colors)

@@ -65,7 +65,7 @@ def main():
     print('Image found with width: {}, height: {}, depth: {}'.format(w, h, d))
 
     X = image.reshape((w * h, d))
-    K = 20 # the number of colors in the image
+    K = 20 # the number of colors in the compressed image
 
     # Get colors
     print('Running')

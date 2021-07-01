@@ -10,7 +10,7 @@ def load_image(path):
 
 
 def initialize_K_centroids(X, K):
-    """ Choose K points from X at random """
+    #Choose K points from X at random 
     m = len(X)
     return X[np.random.choice(m, K, replace=False), :]
 
